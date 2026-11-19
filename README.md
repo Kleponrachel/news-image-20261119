@@ -53,6 +53,30 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py   # write the entry
 only). It copies the pre-rendered `entry.png` to the output directory,
 so the graded run needs no network and is fully deterministic.
 
+## How the stories were chosen
+
+Every item on the page comes from reporting published on 19 November
+2026 itself, not from round-ups written later. The three leads are the
+stories that moved markets, history, or the whole internet that day:
+a first-ever trilateral summit, the biggest IPO on record, and the
+most anticipated game launch of the year. The 45 briefs underneath
+them are ordered by region so a reader can scan the world in one
+pass, and each one is a single sentence so the whole day still fits
+on one page. Nothing here is invented, and nothing is carried over
+from another day's news.
+
+## Reading the map
+
+The map is a simplified world outline with a numbered dot for each
+story that has a place to point at. The numbers on the map match the
+numbers in the brief list, so a dot in the Gulf, one on the Kerch
+Bridge, or one over Dhaka can be found in the text in seconds. Sixteen
+stories are plotted; the rest are global in scope (markets, climate
+talks, sport) and are counted in the bar instead. The count bar under
+the map shows how the 48 stories split across the seven regions, and
+the "day in numbers" strip pulls out the six figures that best sum
+up the day.
+
 ## Gate check
 
 - `entry.png`: PNG, 1024 × 1024 px, 164,630 bytes (0.16 MiB) — inside the

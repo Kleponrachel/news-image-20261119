@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
-"""news-image-20261118 entrypoint (Python 3.13, standard library only).
+"""Deliver the 19 November 2026 front page to the grader's output folder.
 
-The entry image is rendered ahead of time by draw_news.py and stored in
-this repository as entry.png. This program copies it to the output
-directory the grader provides, so every run is deterministic and instant:
-the same bytes land in /output/entry.png on every run.
+The picture itself is drawn ahead of time (see draw_news.py) and kept in
+this repository as entry.png. This entrypoint only moves those bytes
+into the directory the grader names, so the graded run needs no network,
+no fonts and no Pillow -- and it always writes exactly the same file.
 """
 
 import os
 import shutil
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-OUT = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
 
-OUT.mkdir(parents=True, exist_ok=True)
-shutil.copyfile(HERE / "entry.png", OUT / "entry.png")
+def deliver() -> Path:
+    """Copy entry.png into the output directory; return its new path."""
+    repo_root = Path(__file__).resolve().parent
+    target_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    target_dir.mkdir(parents=True, exist_ok=True)
+    destination = target_dir / "entry.png"
+    shutil.copyfile(repo_root / "entry.png", destination)
+    return destination
+
+
+if __name__ == "__main__":
+    deliver()
